@@ -3,7 +3,7 @@ layout: post
 title: "用Android模拟器运行OpenGL"
 description: "来自cocos2d-x的文档，适用于在android模拟器上运行OpenGL的APP"
 category: 技术
-tags: ["android","emulator","OpenGL","GPU"]
+tags: [android, emulator, OpenGL, GPU]
 ---
 {% include JB/setup %}
 

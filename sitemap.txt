@@ -3,6 +3,7 @@ http://leyleo.github.io/archive.html
 http://leyleo.github.io/atom.xml
 http://leyleo.github.io/category.html
 http://leyleo.github.io/index.html
+http://leyleo.github.io/projects.html
 http://leyleo.github.io/rss.xml
 http://leyleo.github.io/sitemap.txt
 http://leyleo.github.io/tags.html

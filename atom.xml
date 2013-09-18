@@ -4,7 +4,7 @@
  <title>草丁</title>
  <link href="http://leyleo.github.io/" rel="self"/>
  <link href="http://leyleo.github.io"/>
- <updated>2013-09-18T17:07:33+08:00</updated>
+ <updated>2013-09-18T17:31:16+08:00</updated>
  <id>http://leyleo.github.io</id>
  <author>
    <name>Ley</name>
@@ -376,11 +376,11 @@ contentOffset.y = contentSize.height - bounds.size.height;&lt;/code&gt;&lt;/pre&
 &lt;p&gt;&lt;img alt='scroll view 7' src='http://leyleo.github.io/assets/images/201308/scroll-view-7.png' /&gt;&lt;/p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Source&lt;/th&gt;&lt;th&gt;译文&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;This allows the maximum value of the content offset to show the area beyond the scrollable area. The top of the visible area is outside the bounds of the scroll view, and is therefore clipped (although it is also off the screen itself, so that doesn’t matter too much).&lt;/td&gt;&lt;td style='text-align: left;'&gt;这个值决定了视图滚动到可移动区域外的content offset的最大值。可视区域的顶部在滚动视图的边界之外因而被裁剪不见（它已经不在屏幕内，无关紧要了）。&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;Hopefully, this gives you some insight into the inner workings of scroll views. Are you wondering about zooming? Well, we won’t talk about it today, but here’s a fun tip: check the transform property of the view you return from viewForZoomingInScrollView:. Once again, you’ll find that a scroll view is just cleverly using already-existing properties of UIView.&lt;/td&gt;&lt;td style='text-align: left;'&gt;希望本文能为你理解滚动视图的内在原理带来帮助。你想了解缩放（zooming）相关的内容嘛？我们今天不讨论那个话题，不过奉送个有趣的小贴士：判断 &lt;code&gt;viewForZoomingInScrollView:&lt;/code&gt; 返回值view的 &lt;strong&gt;transform&lt;/strong&gt; 属性值。你会再次发现滚动视图(scroll view)不过是非常聪明地使用了&lt;strong&gt;UIView&lt;/strong&gt;已有的属性。&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;hr /&gt;
 &lt;p&gt;本话题更多文章请见：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=''&gt;Editorial 导论&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/10/views/'&gt;Editorial 导论&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;a href='http://www.objc.io/issue-3/moving-pixels-onto-the-screen.html'&gt;Getting Pixels onto the Screen&lt;/a&gt; 待译&lt;/li&gt;
 
@@ -401,7 +401,7 @@ contentOffset.y = contentSize.height - bounds.size.height;&lt;/code&gt;&lt;/pre&
 
 &lt;p&gt;翻译的目的是为了自己加深理解，水平有限，欢迎指正。(左侧是原文，右侧是译文)&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;a href=''&gt;(1) This time&lt;/a&gt; we will explore several aspects of the view layer. Daniel starts with the basics of &lt;a href=''&gt;(2) how pixels actually get onto the screen&lt;/a&gt;, and Joe explains some &lt;a href=''&gt;(3) internals of scroll views&lt;/a&gt;. On the more practical side, Ole shows you how to create completely &lt;a href=''&gt;(4) custom collection view layouts&lt;/a&gt;, while Chris talks about &lt;a href=''&gt;(5) creating custom controls&lt;/a&gt;. Finally, Florian looks beyond the basics of Auto Layout in his &lt;a href=''&gt;(6) advanced Auto Layout toolbox&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/10/views/'&gt;(1) This time&lt;/a&gt; we will explore several aspects of the view layer. Daniel starts with the basics of &lt;a href=''&gt;(2) how pixels actually get onto the screen&lt;/a&gt;, and Joe explains some &lt;a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/13/Understanding-Scroll-Views/'&gt;(3) internals of scroll views&lt;/a&gt;. On the more practical side, Ole shows you how to create completely &lt;a href=''&gt;(4) custom collection view layouts&lt;/a&gt;, while Chris talks about &lt;a href=''&gt;(5) creating custom controls&lt;/a&gt;. Finally, Florian looks beyond the basics of Auto Layout in his &lt;a href=''&gt;(6) advanced Auto Layout toolbox&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id='id1'&gt;导论&lt;/h2&gt;
 
@@ -409,17 +409,17 @@ contentOffset.y = contentSize.height - bounds.size.height;&lt;/code&gt;&lt;/pre&
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Source&lt;/th&gt;&lt;th&gt;译文&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;Welcome to objc.io issue #3!&lt;/td&gt;&lt;td style='text-align: left;'&gt;欢迎来到objc.io话题三！&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;This issue is all about the view layer. Of course the view layer has so many aspects that we had to narrow it down to a few topics – which are hopefully of interest to many developers – while leaving tons of other interesting stuff aside (perhaps to be addressed in a later issue?).&lt;/td&gt;&lt;td style='text-align: left;'&gt;这次的话题是关于视图层（view layer）的。当然了，由于视图层包含内容太多，我们不得不只选择其中几个方面的内容，放了很多想听其他关于视图层的开发者童鞋鸽子（要不放到以后的话题中去讲？）。&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;First, we cover some internals of how pixels actually get drawn onto the screen. Aside from it simply being fascinating to take a sneak peak at the full stack under the covers of the frameworks we use everyday, it will help application developers to make smart choices when it comes to graphic performance. Similarly, Joe Conway – author of the Big Nerd Ranch’s iOS Programming Guide – takes a closer look at how scroll views take advantage of UIView’s architecture to get their work done.&lt;/td&gt;&lt;td style='text-align: left;'&gt;首先，我们对像素点到底是怎么绘制到屏幕上的问题一探究竟。之外，由浅入深地揭露我们常用框架背后的所有故事，了解这些有助于应用开发者在改善图形性能时选择正确的决策。与此同时，&lt;a href='http://www.bignerdranch.com/book/ios_programming_the_big_nerd_ranch_guide_rd_edition_'&gt;Big Nerd Ranch&amp;#8217;s iOS Programming Guide&lt;/a&gt;的作者&lt;a href='http://stablekernel.com/'&gt;Joe Conway&lt;/a&gt;带咱们近距离认识scroll视图是如何利用&lt;strong&gt;UIView&lt;/strong&gt;的结构去实现的。&lt;/td&gt;
-&lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;Balancing these topics of internals, we then dive into a series of very practical view layer details: creating custom collection view layouts (many thanks to Ole Begemann!), creating custom controls, and advanced Auto Layout tips and tricks.&lt;/td&gt;&lt;td style='text-align: left;'&gt;在一窥内幕之余，我们分享了一系列关于视图层非常实用的细节：创建自定义collection视图布局（非常感谢&lt;a href=''&gt;Ole Begemann&lt;/a&gt;）,创建自定义控制器，及关于高级自动布局的tips和常见的坑。&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;Balancing these topics of internals, we then dive into a series of very practical view layer details: creating custom collection view layouts (many thanks to Ole Begemann!), creating custom controls, and advanced Auto Layout tips and tricks.&lt;/td&gt;&lt;td style='text-align: left;'&gt;在一窥内幕之余，我们分享了一系列关于视图层非常实用的细节：创建自定义collection视图布局（非常感谢&lt;a href='http://oleb.net/'&gt;Ole Begemann&lt;/a&gt;）,创建自定义控制器，及关于高级自动布局的tips和常见的坑。&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;As always, we are happy to hear from you with feedback, suggestions for future topics, or if you would like to contribute an article to objc.io yourself (you don’t need to be a native speaker, thanks to our copy editor Natalye).&lt;/td&gt;&lt;td style='text-align: left;'&gt;我们一如既往地期待着你的反馈，或者关于未来讨论话题的建议，如有兴趣欢迎投稿（语种不限，感谢我们的审编&lt;a href='https://twitter.com/deutschbitte'&gt;Natalye&lt;/a&gt;）。&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;We wish you happy reading from a very summery Berlin，&lt;/td&gt;&lt;td style='text-align: left;'&gt;We wish you happy reading from a very summery Berlin，&lt;/td&gt;
 &lt;/tr&gt;&lt;tr&gt;&lt;td style='text-align: left;'&gt;Chris, Daniel, and Florian&lt;/td&gt;&lt;td style='text-align: left;'&gt;Chris, Daniel, and Florian&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;hr /&gt;
 &lt;p&gt;本话题更多文章请见：&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href='http://www.objc.io/issue-3/moving-pixels-onto-the-screen.html'&gt;Getting Pixels onto the Screen&lt;/a&gt; 待译&lt;/li&gt;
 
-&lt;li&gt;&lt;a href=''&gt;Understanding Scroll Views 深入学习滚动视图&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/13/Understanding-Scroll-Views/'&gt;Understanding Scroll Views 深入学习滚动视图&lt;/a&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;a href='http://www.objc.io/issue-3/collection-view-layouts.html'&gt;Custom Collection View Layouts&lt;/a&gt; 待译&lt;/li&gt;
 

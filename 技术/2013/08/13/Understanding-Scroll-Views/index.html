@@ -197,11 +197,11 @@ contentOffset.y = contentSize.height - bounds.size.height;</code></pre>
 <p><img alt='scroll view 7' src='http://leyleo.github.io/assets/images/201308/scroll-view-7.png' /></p>
 <table><thead><tr><th>Source</th><th>译文</th></tr></thead><tbody><tr><td style='text-align: left;'>This allows the maximum value of the content offset to show the area beyond the scrollable area. The top of the visible area is outside the bounds of the scroll view, and is therefore clipped (although it is also off the screen itself, so that doesn’t matter too much).</td><td style='text-align: left;'>这个值决定了视图滚动到可移动区域外的content offset的最大值。可视区域的顶部在滚动视图的边界之外因而被裁剪不见（它已经不在屏幕内，无关紧要了）。</td>
 </tr><tr><td style='text-align: left;'>Hopefully, this gives you some insight into the inner workings of scroll views. Are you wondering about zooming? Well, we won’t talk about it today, but here’s a fun tip: check the transform property of the view you return from viewForZoomingInScrollView:. Once again, you’ll find that a scroll view is just cleverly using already-existing properties of UIView.</td><td style='text-align: left;'>希望本文能为你理解滚动视图的内在原理带来帮助。你想了解缩放（zooming）相关的内容嘛？我们今天不讨论那个话题，不过奉送个有趣的小贴士：判断 <code>viewForZoomingInScrollView:</code> 返回值view的 <strong>transform</strong> 属性值。你会再次发现滚动视图(scroll view)不过是非常聪明地使用了<strong>UIView</strong>已有的属性。</td>
-</tr></tbody></table>
+</tr></tbody></table><hr />
 <p>本话题更多文章请见：</p>
 
 <ul>
-<li><a href=''>Editorial 导论</a></li>
+<li><a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/10/views/'>Editorial 导论</a></li>
 
 <li><a href='http://www.objc.io/issue-3/moving-pixels-onto-the-screen.html'>Getting Pixels onto the Screen</a> 待译</li>
 

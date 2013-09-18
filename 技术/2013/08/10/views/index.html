@@ -119,7 +119,7 @@
 
 <p>翻译的目的是为了自己加深理解，水平有限，欢迎指正。(左侧是原文，右侧是译文)</p>
 <hr />
-<p><a href=''>(1) This time</a> we will explore several aspects of the view layer. Daniel starts with the basics of <a href=''>(2) how pixels actually get onto the screen</a>, and Joe explains some <a href=''>(3) internals of scroll views</a>. On the more practical side, Ole shows you how to create completely <a href=''>(4) custom collection view layouts</a>, while Chris talks about <a href=''>(5) creating custom controls</a>. Finally, Florian looks beyond the basics of Auto Layout in his <a href=''>(6) advanced Auto Layout toolbox</a>.</p>
+<p><a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/10/views/'>(1) This time</a> we will explore several aspects of the view layer. Daniel starts with the basics of <a href=''>(2) how pixels actually get onto the screen</a>, and Joe explains some <a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/13/Understanding-Scroll-Views/'>(3) internals of scroll views</a>. On the more practical side, Ole shows you how to create completely <a href=''>(4) custom collection view layouts</a>, while Chris talks about <a href=''>(5) creating custom controls</a>. Finally, Florian looks beyond the basics of Auto Layout in his <a href=''>(6) advanced Auto Layout toolbox</a>.</p>
 
 <h2 id='id1'>导论</h2>
 
@@ -127,17 +127,17 @@
 <table><thead><tr><th>Source</th><th>译文</th></tr></thead><tbody><tr><td style='text-align: left;'>Welcome to objc.io issue #3!</td><td style='text-align: left;'>欢迎来到objc.io话题三！</td>
 </tr><tr><td style='text-align: left;'>This issue is all about the view layer. Of course the view layer has so many aspects that we had to narrow it down to a few topics – which are hopefully of interest to many developers – while leaving tons of other interesting stuff aside (perhaps to be addressed in a later issue?).</td><td style='text-align: left;'>这次的话题是关于视图层（view layer）的。当然了，由于视图层包含内容太多，我们不得不只选择其中几个方面的内容，放了很多想听其他关于视图层的开发者童鞋鸽子（要不放到以后的话题中去讲？）。</td>
 </tr><tr><td style='text-align: left;'>First, we cover some internals of how pixels actually get drawn onto the screen. Aside from it simply being fascinating to take a sneak peak at the full stack under the covers of the frameworks we use everyday, it will help application developers to make smart choices when it comes to graphic performance. Similarly, Joe Conway – author of the Big Nerd Ranch’s iOS Programming Guide – takes a closer look at how scroll views take advantage of UIView’s architecture to get their work done.</td><td style='text-align: left;'>首先，我们对像素点到底是怎么绘制到屏幕上的问题一探究竟。之外，由浅入深地揭露我们常用框架背后的所有故事，了解这些有助于应用开发者在改善图形性能时选择正确的决策。与此同时，<a href='http://www.bignerdranch.com/book/ios_programming_the_big_nerd_ranch_guide_rd_edition_'>Big Nerd Ranch&#8217;s iOS Programming Guide</a>的作者<a href='http://stablekernel.com/'>Joe Conway</a>带咱们近距离认识scroll视图是如何利用<strong>UIView</strong>的结构去实现的。</td>
-</tr><tr><td style='text-align: left;'>Balancing these topics of internals, we then dive into a series of very practical view layer details: creating custom collection view layouts (many thanks to Ole Begemann!), creating custom controls, and advanced Auto Layout tips and tricks.</td><td style='text-align: left;'>在一窥内幕之余，我们分享了一系列关于视图层非常实用的细节：创建自定义collection视图布局（非常感谢<a href=''>Ole Begemann</a>）,创建自定义控制器，及关于高级自动布局的tips和常见的坑。</td>
+</tr><tr><td style='text-align: left;'>Balancing these topics of internals, we then dive into a series of very practical view layer details: creating custom collection view layouts (many thanks to Ole Begemann!), creating custom controls, and advanced Auto Layout tips and tricks.</td><td style='text-align: left;'>在一窥内幕之余，我们分享了一系列关于视图层非常实用的细节：创建自定义collection视图布局（非常感谢<a href='http://oleb.net/'>Ole Begemann</a>）,创建自定义控制器，及关于高级自动布局的tips和常见的坑。</td>
 </tr><tr><td style='text-align: left;'>As always, we are happy to hear from you with feedback, suggestions for future topics, or if you would like to contribute an article to objc.io yourself (you don’t need to be a native speaker, thanks to our copy editor Natalye).</td><td style='text-align: left;'>我们一如既往地期待着你的反馈，或者关于未来讨论话题的建议，如有兴趣欢迎投稿（语种不限，感谢我们的审编<a href='https://twitter.com/deutschbitte'>Natalye</a>）。</td>
 </tr><tr><td style='text-align: left;'>We wish you happy reading from a very summery Berlin，</td><td style='text-align: left;'>We wish you happy reading from a very summery Berlin，</td>
 </tr><tr><td style='text-align: left;'>Chris, Daniel, and Florian</td><td style='text-align: left;'>Chris, Daniel, and Florian</td>
-</tr></tbody></table>
+</tr></tbody></table><hr />
 <p>本话题更多文章请见：</p>
 
 <ul>
 <li><a href='http://www.objc.io/issue-3/moving-pixels-onto-the-screen.html'>Getting Pixels onto the Screen</a> 待译</li>
 
-<li><a href=''>Understanding Scroll Views 深入学习滚动视图</a></li>
+<li><a href='http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/13/Understanding-Scroll-Views/'>Understanding Scroll Views 深入学习滚动视图</a></li>
 
 <li><a href='http://www.objc.io/issue-3/collection-view-layouts.html'>Custom Collection View Layouts</a> 待译</li>
 

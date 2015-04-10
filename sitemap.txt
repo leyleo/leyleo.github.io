@@ -1,16 +1,8 @@
-
-http://leyleo.github.io/archive.html
-http://leyleo.github.io/atom.xml
-http://leyleo.github.io/category.html
-http://leyleo.github.io/index.html
-http://leyleo.github.io/projects.html
-http://leyleo.github.io/rss.xml
-http://leyleo.github.io/sitemap.txt
-http://leyleo.github.io/tags.html
-
-http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/09/10/core-data-overview
-http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/09/10/core-data
-http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/09/06/android-emulator-for-opengl
-http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/13/Understanding-Scroll-Views
-http://leyleo.github.io/%E6%8A%80%E6%9C%AF/2013/08/10/views
-http://leyleo.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2012/09/05/at-the-beginning
+---
+# Remember to set production_url in your _config.yml file!
+title : Sitemap
+---
+{% for page in site.pages %}
+{{site.production_url}}{{ page.url }}{% endfor %}
+{% for post in site.posts %}
+{{site.production_url}}{{ post.url }}{% endfor %}

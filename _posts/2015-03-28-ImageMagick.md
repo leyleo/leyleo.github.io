@@ -4,7 +4,8 @@ title: "关于ImageMagick"
 description: "ImageMagick的安装和简单使用。"
 category: 技术
 tags: [OS X, ImageMagick, 图像处理]
-excerpt: ""
+excerpt: "关于Imagemagick
+ubuntu里自带有该程序，通过 [convert -version] 查看版本，安装目录为 [/usr/bin/X11] ."
 
 ---
 {% include JB/setup %}

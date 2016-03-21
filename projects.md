@@ -7,14 +7,14 @@ group: navigation
 ---
 {% include JB/setup %}
 
-##TeamDisk
+## TeamDisk
 
-####是什么？
+#### 是什么？
     TeamDisk是一个基于WebDAV协议的网盘项目解决方案，是对私有云盘技术的一次尝试。方案包含了从搭建网盘服务器端，到用户权限的后台管理，到移动客户端及PC端工具等一系列子项目。
 
 由[@chenfan](https://github.com/chenfan)和[@leyleo](https://github.com/leyleo)开发。该方案使用MIT协议。
 
-####包含项目
+#### 包含项目
 * __服务端WebDAV程序__
 
     程序是基于[SabreDAV](https://code.google.com/p/sabredav/)来开发，通过PHP来模拟webdav服务器。并在SabreDAV的基础上添加了权限管理模块，通过后台管理模块，管理员可以添加资源组，同时为这些组分配资源目录的使用权限。做到了不同权限组都只能访问到自身权限下的资源。

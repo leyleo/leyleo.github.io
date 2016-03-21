@@ -19,7 +19,7 @@ Source | 译文
 ------ | --- 
 Core Data is probably one of the most misunderstood Frameworks on OS X and iOS. To help with that, we’ll quickly go through Core Data to give you an overview of what it is all about, as understanding Core Data concepts is essential to using Core Data the right way. Just about all frustrations with Core Data originate in misunderstanding what it does and how it works. Let’s dive in… | Core Data 大概是OS X和iOS系统上最被误解的框架之一。为了便于理解上述说法，我们将快速带你了解一下Core Data到底是什么。当然了，理解Core Data的基本概念对于正确使用它也是至关重要的。所有关于Core Data的消极看法都源自于对它的功能和工作原理的错误认识。下面就切入正题。
 
-##What is Core Data?
+## What is Core Data?
 
 Source | 译文
 ------ | ----
@@ -29,7 +29,7 @@ If you’ve worked with [Object-relational mapping (O/RM)](https://en.wikipedia.
 One of the very powerful things that Core Data provides is its object graph management. This is one of the pieces of Core Data you need to understand and learn in order to bring the powers of Core Data into play. | Core Data牛掰之一就是它的数据对象图表管理。这是你能将Core Data学以致用所需要掌握的一个点。
 On a side note: Core Data is entirely independent from any UI-level frameworks. It’s, by design, purely a model layer framework. And on OS X it may make a lot of sense to use it even in background daemons and the like. | 注释：Core Data完全独立于任何UI层级的框架。它在架构设计上属于纯粹的数据模型层框架。而且，在OS X系统上它被更多地使用，甚至用在后台守护进程或类似的地方。
 
-##The Stack
+## The Stack
 
 Source | 译文
 ------ | ----
@@ -47,7 +47,7 @@ The most common scenario, however, looks like this: | 最常见的使用情况�
 
 ![Core Data Stack simple](http://leyleo.github.io/assets/images/201309/stack-simple.png)
 
-##How the Components Play Together
+## How the Components Play Together
 
 Source | 译文
 ------ | ----
@@ -57,7 +57,7 @@ Our app has a single root item. There’s nothing magical to it. It’s simply a
 When the app launches, we set up our stack as depicted above, with one store, one managed object context, and a persistent store coordinator to tie the two together. | 当应用载入，Core Data堆栈上便有了一个存储仓，一个托管对象上下文(managed object context - MOC)，以及用来连接两部分的PSC。
 On first launch, we don’t have any items. The first thing we need to do is to create the root item. You add managed objects by inserting them into the context.| 应用首次载入时，不存在任何节点项。首先，我们要做的就是创建一个根节点。通过插入托管对象到上下文中来添加对应的节点。
 
-###Creating Objects
+### Creating Objects
 
 Source | 译文
 ------ | ----
@@ -89,7 +89,7 @@ Source | 译文
 ------ | ---
 Now there’s a single item in our managed object context (MOC). The context knows about this newly inserted managed object and the managed object **rootItem** knows about the context (it has a `-managedObjectContext` method). | 现在，在托管对象上下文(MOC)中存在一个对象实例了，上下文知晓这个新添加的托管对象，而且这个托管对象**rootItem**也知晓所对应的上下文（托管对象有个方法叫 `-managedObjectContext`）。
 
-###Saving Changes
+### Saving Changes
 
 Source | 译文
 ------ | ---
@@ -105,7 +105,7 @@ Source | 译文
 At this point, a lot is going to happen. First, the managed object context figures out what has changed. It is the context’s responsibility to track any and all changes you make to any managed objects inside that context. In our case, the only change we’ve made thus far is inserting one object, our **rootItem**. | 现在开始有很多事被触发。首先，MOC判断哪些数据发生了修改。对应的上下文负责跟踪所有属于该上下文内的托管对象的任何修改。在我们的例子中，我们到目前为止唯一做的修改就是插入一个**rootItem**对象。
 The managed object context then passes these changes on to the persistent store coordinator and asks it to propagate the changes through to the store. The persistent store coordinator coordinates with the store (in our case, an SQL store) to write our inserted object into the SQL database on disk. The **NSPersistentStore** class manages the actual interaction with SQLite and generates the SQL code that needs to be executed. The persistent store coordinator’s role is to simply coordinate the interaction between the store and the context. In our case, that role is relatively simple, but complex setups can have multiple stores and multiple contexts. | MOC将这些修改传给PSC，并让PSC传给存储仓。PSC配合存储仓（在我们的例子中，是SQL存储仓）将我们插入的对象写入硬盘的SQL数据库中。**NSPersistentStore** 类管理与SQLite的实际交互，并生成需要被执行的SQL代码。PSC的角色就是简单协调存储仓和上下文之间的交互。本例中，PSC工作相当少，但是通过复杂的配置可以协调多个存储仓和多个上下文。
 
-###Updating Relationships
+### Updating Relationships
 
 Source | 译文
 ------ | ---
@@ -119,7 +119,7 @@ Source | 译文
 ------ | ---
 That’s it. Again, these changes are only inside the managed object context. Once we save the context, however, the managed object context will tell the persistent store coordinator to add that newly created object to the database file just like for our first object. But it will also update the relationship from our second item to the first and the other way around, from the first object to the second. Remember how the **_Item_** entity has a parent and a children relationship. These are reverse relationships of one another. Because we set the first item to be the parent of the second, the second will be a child of the first. The managed object context tracks these relationships and the persistent store coordinator and the store persist (i.e. save) these relationships to disk. | 搞定。同样的，这次的修改仅仅是插入数据到MOC。一旦我们保存了context，MOC就会告诉PSC将新建的数据对象添加到数据库文件去，就像第一个对象的操作那样。不过它还会更新从第二个数据项到第一个数据项的数据关系，及从第一个到第二个数据项的数据关系。记得搞清**_Item_**实体的父子关系，另一个实体要逆向。因为我们将第一项设置为第二项的父节点，第二项就是第一项的子节点。MOC跟踪这些数据关系，PSC和存储仓将这些数据关系持久化（例如，save）到硬盘上。
 
-###Getting to Objects
+### Getting to Objects
 
 Source | 译文
 ------ | ---
@@ -155,7 +155,7 @@ It’s important to understand how data is fetched in these cases, since it affe
 When you traverse a relationship (such as parent or children in our case) one of three things can happen: (1) the object is already in the context and traversing is basically for free. (2) The object is not in the context, but the persistent store coordinator has its values cached, because you’ve recently retrieved the object from the store. This is reasonably cheap (some locking has to occur, though). The expensive case is (3) when the object is accessed for the first time by both the context and the persistent store coordinator, such that is has to be retrieved by store from the SQLite database. This last case is much more expensive than (1) and (2). | 当你遍历一个数据关系时（像咱们例子里的父子关系），会发生下面三种情况中的一种：(1) 待遍历的对象已经在context上下文中，可以轻松自由地遍历。（2）待遍历的对象不在context中，但是PSC已经将它的值缓存进来了，这通常发生在你刚才已经在数据仓中检索过这个对象的时候，这种情况对性能的影响还算可以（不过，还是会有些卡顿）。造价最高的情况是（3）待遍历的对象是第一次被context上下文和PSC检索，这时候必不可少地从数据仓中将SQLite数据库里的内容取出。第三种情况比（1）和（2）更耗费资源。
 If you know you have to fetch objects from the store (because you don’t have them), it makes a huge difference when you can limit the number of fetches by getting multiple objects at once. In our example, we might want to fetch all child items in one go instead of one-by-one. This can be done by crafting a special **NSFetchRequest**. But we must take care to only to run a fetch request when we need to, because a fetch request will also cause option (3) to happen; it will always access the SQLite database. Hence, when performance matters, it makes sense to check if objects are already around. You can use `-[NSManagedObjectContext objectRegisteredForID:]` for that.| 如果你预先知道你要从数据仓里读取很多数据对象出来（因为他们一开始不会在内存中），那么通过一次读取多个数据来降低读取的次数，可以提升很多性能。在我们的例子里，我们如果想读取所有的子项出来，一次读取所有要比一次取一项要好。这种操作可以通过执行特定的**NSFetchRequest**来完成。不过我们必须要小心在必要的时候只使用一条读取请求（fetch request），因为一条读取请求也会引发上面的情况（3）发生；它总是会请求SQLite数据库。因此，当有性能问题时，需要格外注意所用的对象是不是已经在内存中了。你可以通过 `-[NSManagedObjectContext objectRegisteredForID:]` 来判断。
 
-###Changing Object Values
+### Changing Object Values
 
 Source | 译文
 ------ | ----
@@ -172,7 +172,7 @@ Saving values needs to coordinate with both the persistent store coordinator and
 It is also important to note that saves are atomic. They’re transactional. Either all changes will be committed to the store / SQLite database or none of the changes will be saved. This is important to keep in mind when implementing custom **NSIncrementalStore** subclasses. You have to either guarantee that a save will never fail (e.g. due to conflicts), or your store subclass has to revert all changes when the save fails. Otherwise, the object graph in memory will end up being inconsistent with the one in the store. | 另外需要注意的是，每次保存都是原子性(atomic)的，不可分割的，每次提交到存储仓/SQLite数据库中的修改要么全都被保存了，要么就一个也没存上。如果你要自己扩展**NSIncrementalStore**的子类时尤其需要注意这点。你要保证一次的保存中，所有的修改都没出错（譬如由于冲突导致的错误），或者你的子类在遇到保存失败时，需要将这次的所有修改恢复到保存前的状态。不然的话，在内存中的数据对象图表和数据仓里的图表就不一致了。
 Saves will normally never fail if you use a simple setup. But Core Data allows multiple contexts per persistent store coordinator, so you can run into conflicts at the persistent store coordinator level. Changes are per-context, and another context may have introduced conflicting changes. And Core Data even allows for completely separate stacks both accessing the same SQLite database file on disk. That can obviously also lead to conflicts (i.e. one context trying to update a value on an object that was deleted by another context). Another reason why a save can fail is validation. Core Data supports complex validation policies for objects. It’s an advanced topic. A simple validation rule could be that the **title** of an **Item** must not be longer than 300 characters. But Core Data also supports complex validation policies across properties. | 如果你设置简单的话，保存的操作通常不会失败。但是Core Data允许单PSC有多context上下文，所以在PSC阶段会存在数据冲突现象。修改是在每一个context中进行的，一个context中的修改可能会跟另一处的修改发生冲突。而且Core Data甚至允许两个独立的数据堆栈（stack）都对硬盘上的同一个SQLite数据库进行读取。显然也会引起数据冲突（例如，一个context试图更新某个数据对象，而另一个context已经将该数据对象删除了）。另外一个会导致保存失败的原因是数据有效性。暂且不表。Core Data支持数据对象的复杂有效性检查。一个简单的有效性规则应该是**Item**对象的**title**不能超过300字符，不过Core Data也支持跨属性间的复杂有效性检查。
 
-##Final Words
+## Final Words
 
 Source | 译文
 ------ | ---

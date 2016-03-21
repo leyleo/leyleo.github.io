@@ -21,7 +21,7 @@ It may be hard to believe, but a UIScrollView isn’t much different than a stan
 
 <!--more-->
 
-##Rasterization & Composition
+## Rasterization & Composition
 
 Source | 译文
 --- | --- 
@@ -65,7 +65,7 @@ Source | 译文
 ------ | ---
 And this should make sense. We change the frame’s origin of the button, and it changes its position relative to its lovely purple superview. Notice that if we move the button so that parts of it are outside of the bounds of the purple superview, those parts are clipped in the same way drawing during rasterization would be clipped. However, technically, because of how iOS handles compositing under the hood, you can have a subview render outside of its superview’s bounds, but drawing during rasterization cannot occur outside of a view’s bounds. | 应该很好理解。我们改变按钮**frame**的原点，它在粉色父视图上的位置就跟着变了。注意，当我们将按钮移到部分在粉色父视图外面时，那部分就随着光栅化所绘制图像的裁剪而被裁剪掉了。不过，从技术上将，根据iOS处理合成的底层原理，你可以让一个子视图渲染父视图**bounds**以外的图像，不过在视图**bounds**以外的部分不会存在光栅化处理中的绘制行为。
 
-##Scroll View's Content Offset
+## Scroll View's Content Offset
 
 Source | 译文
 ------ | ---
@@ -96,7 +96,7 @@ Source | 译文
 ------ | ---
 Notice that in the previous diagram, changing the bounds’ origin enough moved the button outside of the composited image produced by the purple view and the button. This is just what happens when you scroll a scroll view enough so that a view disappears! | 上图中需要注意一点，将粉色视图的**bounds**原点改变足够大，就能将按钮移出粉色视图和按钮所要合成的图像之外。这就是为什么你滚动一个scroll view足够多，上面的一个视图就会消失不见。
 
-##A Window into the World: Content Size
+## A Window into the World: Content Size
 
 Source | 译文
 ------ | ---
@@ -114,7 +114,7 @@ The maximum value for the content offset is the difference between the content s
 	contentOffset.x = contentSize.width - bounds.size.width;
 	contentOffset.y = contentSize.height - bounds.size.height;
 
-##Tweaking the Window with Content Insets
+## Tweaking the Window with Content Insets
 
 Source | 译文
 ------ | ---

@@ -13,15 +13,15 @@ ubuntu里自带有该程序，通过 [convert -version] 查看版本，安装目
 关于Imagemagick
 ubuntu里自带有该程序，通过`convert -version`查看版本，安装目录为`/usr/bin/X11`.
 
-###Mac OS安装
+### Mac OS安装
 
-####1.下载source code
+#### 1.下载source code
 
 第1步. 下载 [ImageMagick 源代码](http://www.imagemagick.com.cn/download.html)
 
 第2步. `tar -xzvf ImageMagick.tar.gz`
 
-####2. 配置并编译
+#### 2. 配置并编译
 
 第3步. `cd ImageMagick-6.x.x LDFLAGS="-L/usr/lib" CPPFLAGS="-I/usr/include" --enable-shared`
 
@@ -29,28 +29,28 @@ ubuntu里自带有该程序，通过`convert -version`查看版本，安装目�
 
 第5步. `make`
 
-####3. 安装
+#### 3. 安装
 
 第6步. `sudo make install`   注：需要root权限
 
-####4. 测试
+#### 4. 测试
 
 第7步. `display filename`  注：打开名为filename的图片
 
-###相关命令：
+### 相关命令：
 
 	$ convert icon.jpg icon.png //转换文件格式
 	$ display icon.png //打开icon.png
 	$ convert icon.png -resize 57x57\! icon_57.png
 	$ convert -list format //查看支持的文件类型
 
-###问题
+### 问题
 
-####问题描述
+#### 问题描述
 
 解决**convert: no decode delegate for this image format**的问题：在使用 `convert -quality 50% vipbanner.jpg newbanner.jpg` 时提示失败，原因是**没有找到可用的delegate**。
 
-####解决方案
+#### 解决方案
 
 第1步. 去下载 [jpeg delegate](http://www.imagemagick.org/download/delegates/)
  里找到对应的格式文件，下载下来，解压，进入对应文件夹，执行：
@@ -67,7 +67,7 @@ ubuntu里自带有该程序，通过`convert -version`查看版本，安装目�
 
 然后测试一下，可以使用了。
 
-###ImageMagick可以做什么
+### ImageMagick可以做什么
 
 Here are just a few examples of what ImageMagick can do (摘自[ImageMagick官网文档](http://www.imagemagick.org/script/index.php)):
 

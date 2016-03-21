@@ -9,8 +9,8 @@ excerpt: "如何安装.mobileprovision文件？主要步骤有两步：1. 从mob
 ---
 {% include JB/setup %}
 
-##MobileProvision相关
-###如何安装.mobileprovision文件
+### 如何安装.mobileprovision文件
+
 文章来源：[stackoverflow](http://stackoverflow.com/questions/10398456/can-an-xcode-mobileprovision-file-be-installed-from-the-command-line)
 
 主要步骤有两步：
@@ -20,7 +20,7 @@ excerpt: "如何安装.mobileprovision文件？主要步骤有两步：1. 从mob
 
 主要问题就是如何取出文件中的UUID，及其他相关的信息。
  
-####方法1： 直接`grep`文件，并用正则匹配出UUID。
+#### 方法1： 直接`grep`文件，并用正则匹配出UUID。
 该方法的问题在于能很快取出UUID，但是不能方便取出其他参数信息。
 
 ```
@@ -40,7 +40,7 @@ for file in *.*provision*; do
 done
 ```
 
-####方法2：先解密文件，再使用`PlistBuddy`获取对应字段。
+#### 方法2：先解密文件，再使用`PlistBuddy`获取对应字段。
 文章来源：[stackoverflow](http://stackoverflow.com/questions/6398364/parsing-mobileprovision-files-in-bash/10490095#10490095)
 
 > 首先是解密`*.mobileprovision`文件。
@@ -106,7 +106,7 @@ cp ${PROFILE_FILE}.mobileprovision "$HOME/Library/MobileDevice/Provisioning Prof
 rm ${PROFILE_FILE}.mobileprovision
 ```
 
-###其他相关文档：
+### 其他相关文档：
 
 * [https://gist.github.com/benvium/2568707](https://gist.github.com/benvium/2568707)
 * [mpParse](https://github.com/dwelch2344/mpParse) 项目工程，可编译成可执行文件：用oc写的。

@@ -83,11 +83,11 @@ JB :
     disqus :
       short_name : jekyllbootstrap
     livefyre :
-      site_id : 123
+      site_id : 
     intensedebate :
       account : 123abc
     facebook :
-      appid : 123
+      appid : 
       num_posts: 5
       width: 580
       colorscheme: light
@@ -99,13 +99,13 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-43871168-1'
+        tracking_id : ''
     getclicky :
       site_id : 
     mixpanel :
         token : '_MIXPANEL_TOKEN_'
     piwik :
-        baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
+        baseURL : '' # Piwik installation address (without protocol)
         idsite : '1'                   # the id of the site on Piwik
 
   # Settings for sharing helper. 

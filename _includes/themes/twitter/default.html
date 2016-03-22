@@ -20,14 +20,7 @@
 
     <!-- code highlight -->
     <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/google-code-prettify/prettify.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
-    <script src="{{ ASSET_PATH }}/google-code-prettify/prettify.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        $("pre").addClass("prettyprint prettyprinted linenums");
-        prettyPrint();
-      });
-    </script>
+    
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -73,4 +66,12 @@
 
     {% include JB/analytics %}
   </body>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="{{ ASSET_PATH }}/google-code-prettify/prettify.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $("pre").addClass("prettyprint");
+      prettyPrint();
+    });
+  </script>
 </html>

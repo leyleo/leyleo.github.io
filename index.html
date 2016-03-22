@@ -17,22 +17,46 @@ tagline:
 	</ul>
   {% endfor %}
 </ul>
-
-{% if paginator.total_pages > 1 %}
-<!-- 分页代码 -->
-  {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"上一页</a>
-  {% endif %}
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <span class="active">{{ page }}</span>
-    {% elsif page == 1 %}
-      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+<hr>
+<div id="post-pagination" class="pagination">
+    {% if paginator.page == 1 %}
+      <span class="page-numbers current">1</span>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      <a class="page-numbers" href="/">1</a>
     {% endif %}
-  {% endfor %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
-  {% endif %}
-{% endif %}
+
+    {% assign pageSize = 2 %}
+    {% assign startPage = paginator.page | minus:pageSize %}
+    {% if 2 > startPage %}
+      {% assign startPage = 2 %}
+    {% endif %}
+    {% assign endPage = paginator.page | plus:pageSize %}
+    {% if endPage >= paginator.total_pages %}
+      {% assign endPage = paginator.total_pages | minus:1 %}
+    {% endif %}
+
+    {% assign pageTemp = pageSize | plus:2 %}
+    {% if paginator.page > pageTemp %}
+      <span class="page-numbers dots">…</span>
+    {% endif %}
+
+    {% for count in (startPage..endPage) %}
+      {% if count == paginator.page %}
+        <span class="page-numbers current">{{ count }}</span>
+      {% else %}
+        <a class="page-numbers" href="/page{{ count }}">{{ count }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% assign pageTemp1 = pageSize | plus:1 %}
+    {% assign pageTemp = paginator.page | plus:pageTemp1 %}
+    {% if paginator.total_pages > pageTemp %}
+      <span class="page-numbers dots">…</span>
+    {% endif %}
+
+    {% if paginator.page == paginator.total_pages %}
+      <span class="page-numbers current">{{paginator.total_pages}}</span>
+    {% else %}
+      <a class="page-numbers" href="/page{{paginator.total_pages}}/">{{paginator.total_pages}}</a>
+    {% endif %}
+</div>

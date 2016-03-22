@@ -118,3 +118,28 @@ a span, li span {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+/*分页*/
+.pagination {
+  font-size: 15px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.pagination .page-numbers {
+  color:#555;
+  display: inline-block;
+  text-align: center;
+  width: 24px;
+  line-height:24px;
+  margin:5px;
+  /*background: #E4E5E1;*/
+}
+
+.pagination .page-numbers.current {
+  /*background: #c30;*/
+  color: goldenrod;
+}
+/*.pagination .page-numbers.dots {
+  border-color:rgba(0,0,0,0)
+}*/

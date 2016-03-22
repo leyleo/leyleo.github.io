@@ -6,7 +6,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
 
 gems: [jekyll-paginate]
-paginate: 5
+paginate: 8
 paginate_path : "page:num"
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.

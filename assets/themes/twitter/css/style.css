@@ -1,16 +1,39 @@
 /* Custom container */
-html,h1,h2,h3,h4,h5,h6 {
+/*html,h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
+}*/
+
+body {
+  font-family: "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  color: #444;
 }
 
 a {
-  color: #444;
+  color: #555;
 }
 
 a span, li span {
   color:goldenrod;
   font-weight: normal;
   font-size: 15px;
+}
+
+.post a {
+  color: #6E7173;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  transition: all .1s ease-in;
+}
+.post a:hover {
+  border-bottom: none;
+}
+
+.content {
+  line-height: 1.8;
+}
+
+.page-header h1{
+  font-weight: normal;
 }
 
 .content td {
@@ -57,7 +80,7 @@ a span, li span {
 /* post-full*/
 .post-full .date {
   margin-bottom: 20px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 /* tag_box */

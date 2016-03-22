@@ -7,12 +7,12 @@
       {% include JB/tags_list %}
       <li><i class="icon-time"></i><li><a>{{ page.date | date:"%Y-%m-%d" }}<span></span></a></li></li>
     </ul>
-  {% endunless %}  
+  {% endunless %}
 </div>
 
 <div class="row-fluid post-full">
   <div class="span12">
-    <div class="content">
+    <div class="content post">
       {{ content }}
     </div>
 
@@ -22,7 +22,7 @@
       {% assign categories_list = page.categories %}
       {% include JB/categories_list %}
     </ul>
-  {% endunless %} 
+  {% endunless %}
 
     <hr>
     <div class="pagination">

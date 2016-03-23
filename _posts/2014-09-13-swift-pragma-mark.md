@@ -3,7 +3,7 @@ layout: post
 title: "Swift中的#pragma mark"
 description: "Swift中的#pragma mark"
 category: 技术
-tags: [swift, xcode]
+tags: [swift, XCode]
 excerpt: "在OC中的#pragma mark写法如下：#pragma mark - Actions，而在Swift中的写法为："
 
 ---

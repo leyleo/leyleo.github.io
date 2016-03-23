@@ -20,11 +20,10 @@ security import FileName -P Password -k login.keychain
 
 文章举例：
 
-``` 
+```
 security create-keychain -p password bobbins.keychain
 security add-certificates ./MyCertificate.cer
 
 security unlock-keychain -p password bobbins.keychain
 security import ./MyPrivateKey.p12 -k bobbins.keychain -P privateKeyPassword
 ```
-

@@ -4,13 +4,13 @@ title: "关于ImageMagick"
 description: "ImageMagick的安装和简单使用。"
 category: 技术
 tags: [OS X, ImageMagick, 图像处理]
-excerpt: "关于Imagemagick
-ubuntu里自带有该程序，通过 [convert -version] 查看版本，安装目录为 [/usr/bin/X11] ."
+excerpt: "ImageMagick (TM) 是一个免费的创建、编辑、合成图片的软件。它可以读取、转换、写入多种格式的图片。它可以读取、转换、写入多种格式的图片。图片切割、颜色替换、各种效果的应用，图片的旋转、组合，文本，直线，多边形，椭圆，曲线，附加到图片伸展旋转。ImageMagick是免费软件：全部源码开放，可以自由使用，复制，修改，发布。它遵守GPL许可协议。"
 
 ---
 {% include JB/setup %}
 
-关于Imagemagick
+ImageMagick (TM) 是一个免费的创建、编辑、合成图片的软件。它可以读取、转换、写入多种格式的图片。图片切割、颜色替换、各种效果的应用，图片的旋转、组合，文本，直线，多边形，椭圆，曲线，附加到图片伸展旋转。ImageMagick是免费软件：全部源码开放，可以自由使用，复制，修改，发布。它遵守GPL许可协议。它可以运行于大多数的操作系统。ImageMagick的大多数功能的使用都来源于命令行工具。
+
 ubuntu里自带有该程序，通过`convert -version`查看版本，安装目录为`/usr/bin/X11`.
 
 ### Mac OS安装
@@ -63,7 +63,7 @@ ubuntu里自带有该程序，通过`convert -version`查看版本，安装目�
 
 	./configure
 	make
-	sudo make install 
+	sudo make install
 
 然后测试一下，可以使用了。
 

@@ -4,7 +4,7 @@ title: "iOS Daily Build简易脚本"
 description: "iOS Daily Build简易脚本"
 category: 技术
 tags: [OS X, iOS, shell, xcode]
-excerpt: "准备工作：1. 将脚本文件改名为工程的名字，例如这个**DailyBuildTest**的项目，就把脚本改名为DailyBuildTest.sh，并放到工程的根目录下。2. 将template.plist文件放到工程的根目录下。"
+excerpt: "准备工作：1. 将脚本文件改名为工程的名字，例如这个DailyBuildTest的项目，就把脚本改名为DailyBuildTest.sh，并放到工程的根目录下。2. 将template.plist文件放到工程的根目录下。"
 
 ---
 {% include JB/setup %}

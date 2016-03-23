@@ -24,13 +24,13 @@ a span, li span {
   box-shadow: 0px .5px #eeefff;
 }
 
-.post a {
-  color: #6E7173;
+.post a, .readmore a {
+  color: #6E6E6E;
   border-bottom: 1px solid #ddd;
   text-decoration: none;
   transition: all .1s ease-in;
 }
-.post a:hover {
+.post a:hover, .readmore a:hover {
   border-bottom: none;
 }
 

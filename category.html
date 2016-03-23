@@ -1,9 +1,8 @@
 ---
 layout: page
-title: "@分类"
+title: "分类"
 tagline: 轻度强迫症
 header: Posts By Category
-group: navigation
 ---
 {% include JB/setup %}
 
@@ -13,11 +12,10 @@ group: navigation
 </ul>
 
 
-{% for category in site.categories %} 
+{% for category in site.categories %}
   <h3 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h3>
   <ul>
-    {% assign pages_list = category[1] %}  
+    {% assign pages_list = category[1] %}
     {% include JB/pages_list %}
   </ul>
 {% endfor %}
-

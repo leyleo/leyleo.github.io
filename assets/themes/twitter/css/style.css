@@ -18,6 +18,12 @@ a span, li span {
   font-size: 15px;
 }
 
+.post-block {
+  padding: 15px 0px;
+  border-bottom: solid .5px #eee;
+  box-shadow: 0px .5px #eeefff;
+}
+
 .post a {
   color: #6E7173;
   border-bottom: 1px solid #ddd;
@@ -35,6 +41,12 @@ a span, li span {
 .page-header h1{
   font-weight: normal;
 }
+
+footer {
+  text-align: center;
+}
+
+//////
 
 .content td {
   margin: 0 5px;

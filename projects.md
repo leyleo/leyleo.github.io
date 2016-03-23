@@ -1,9 +1,8 @@
 ---
 layout: page
-title: "@项目"
+title: "项目"
 tagline: 想说的太多
 header: My Projects
-group: navigation
 ---
 {% include JB/setup %}
 

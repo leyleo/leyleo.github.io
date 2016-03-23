@@ -46,10 +46,14 @@ footer {
   text-align: center;
 }
 
+table {
+  border-collapse: separate;
+  border-spacing: 8px 2px;
+}
 //////
 
 .content td {
-  margin: 0 5px;
+  margin: 0 15px;
   vertical-align: top;
 }
 

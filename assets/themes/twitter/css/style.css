@@ -50,6 +50,15 @@ table {
   border-collapse: separate;
   border-spacing: 8px 2px;
 }
+
+blockquote {
+  padding: 0 0 0 10px;
+  border-left: 5px solid #ddd;
+}
+
+blockquote p {
+  font-size: 14px;
+}
 //////
 
 .content td {

@@ -342,6 +342,8 @@ Undefined symbols for architecture arm64:  "_x264_encoder_close", referenced fro
 
 [FFmpeg框架在iOS平台上的编译和使用](http://www.jianshu.com/p/147c03553e63)
 
+[利用FFmpeg+x264将iOS摄像头实时视频流编码为h264文件](http://depthlove.github.io/2015/09/18/use-ffmpeg-and-x264-encode-iOS-camera-video-to-h264/)
+
 [Building librtmp for iOS](https://media.fish/building-librtmp-for-ios-and-android/)
 
 [iOS设备编译rtmp脚本](http://songjihe.com/2016/03/13/rtmpbian-yi-jiao-ben/)：未编译成功

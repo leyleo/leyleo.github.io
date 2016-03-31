@@ -38,6 +38,12 @@ a span, li span {
   line-height: 1.8;
 }
 
+.post h3 {
+  border-left: 5px solid goldenrod;
+  padding: 0 10px;
+  background-color: #f7f7f7;
+}
+
 .page-header h1{
   font-weight: normal;
 }

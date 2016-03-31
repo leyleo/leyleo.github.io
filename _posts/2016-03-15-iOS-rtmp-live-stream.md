@@ -39,6 +39,7 @@ excerpt: "最近收集了一些关于视频直播的资料，目前主流的技�
 * [简单的基于FFmpeg的移动端 项目](https://github.com/leixiaohua1020/simplest_FFmpeg_mobile)
 * [IOS手机直播Demo技术简介 文章](https://www.zybuluo.com/qvbicfhdx/note/126161)
 * [利用FFmpeg+x264将iOS摄像头实时视频流编码为h264文件 文章](http://depthlove.github.io/2015/09/18/use-FFmpeg-and-x264-encode-iOS-camera-video-to-h264/)
+* [FFMpeg写MP4文件例子分析](http://blog.csdn.net/eightdegree/article/details/7425811)
 
 > 使用iOS自身编码：
 
@@ -46,6 +47,7 @@ excerpt: "最近收集了一些关于视频直播的资料，目前主流的技�
 * [IFVideoPicker 项目](https://github.com/ifactorylab/IFVideoPicker)
 * [GDCL Video Encoding 项目](http://www.gdcl.co.uk/2013/02/20/iOS-Video-Encoding.html)
 * [VideoCore 项目](https://github.com/leyleo/VideoCore)
+* [LiveVideoCoreSDK](https://github.com/runner365/LiveVideoCoreSDK) 基于上面VideoCore，使用`librtmp`库进行推流。
 
 ### VideoCore
 

@@ -8,8 +8,8 @@ tagline:
 <ul class="posts">
   {% for post in paginator.posts %}
     <div class="post-block">
-      <div id="postTitle"><h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3></div>
-      <div class="readmore">{{post.excerpt}} <a href="{{ BASE_PATH }}{{ post.url }}"> 继续阅读 &rarr;</a></div>
+      <div id="postTitle"><h3><a href="{{ BASE_PATH }}{{ post.url }}.html">{{ post.title }}</a></h3></div>
+      <div class="readmore">{{post.excerpt}} <a href="{{ BASE_PATH }}{{ post.url }}.html"> 继续阅读 &rarr;</a></div>
       <ul class="tag_box inline">
   	    <li><i class="icon-time"></i><li><a>{{ post.date | date:"%Y-%m-%d" }}<span></span></a></li></li>
       	<li><i class="icon-tags"></i></li>

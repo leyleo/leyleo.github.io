@@ -28,13 +28,13 @@
     <div class="pagination">
       <ul>
       {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">&larr; 新一篇</a></li>
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}.html" title="{{ page.next.title }}">&larr; 新一篇</a></li>
       {% else %}
         <li class="next disabled"><a>&larr; 新一篇</a>
       {% endif %}
         <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">归档</a></li>
       {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">旧一篇 &rarr;</a></li>
+        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}.html" title="{{ page.previous.title }}">旧一篇 &rarr;</a></li>
       {% else %}
         <li class="prev disabled"><a>旧一篇 &rarr;</a></li>
       {% endif %}

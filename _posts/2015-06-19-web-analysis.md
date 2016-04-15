@@ -111,3 +111,7 @@ convert -quality 50% filename newfilename
 21. Avoid Filters
 22. Do Not Scale Images in HTML
 23. Make favicon.ico Small and Cacheable
+
+> 推荐阅读：
+
+[用PhantomJS来给AJAX站点做SEO优化](http://f2er.info/article/29)

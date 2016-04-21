@@ -174,3 +174,9 @@ blockquote p {
 /*.pagination .page-numbers.dots {
   border-color:rgba(0,0,0,0)
 }*/
+
+code {
+  color: #039BE5;
+  margin: 0 2px;
+  border: none;
+}

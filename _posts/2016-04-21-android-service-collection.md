@@ -4,7 +4,7 @@ title: "一篇就能看明白Android Service"
 description: "一篇就能看明白Android Service"
 category: 技术
 tags: [Android, Service]
-excerpt: ""
+excerpt: "Service主要提供两大功能：一种是通过startService启动服务，一旦启动，服务即可在后台无限期运行，即使启动服务的组件已被销毁也不受影响。已启动的服务通常是执行单一操作，而且不会将结果返回给调用方。"
 
 ---
 {% include JB/setup %}

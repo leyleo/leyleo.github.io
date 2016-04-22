@@ -3,7 +3,7 @@ layout: post
 title: "用Android模拟器运行OpenGL"
 description: "来自cocos2d-x的文档，适用于在android模拟器上运行OpenGL的APP"
 category: 技术
-tags: [android, emulator, OpenGL, GPU]
+tags: [Android, emulator, OpenGL, GPU]
 excerpt: "这篇文章是在用cocos2d-x JSB开发游戏时从官方找到的文档，适用于在android模拟器上运行OpenGL的APP。网上没有找到比这个好用的完整解决方法了。以后有时间会翻译成中文。"
 
 ---
@@ -58,7 +58,7 @@ In your app's Application.mk, add x86 to the supported ABI's by adding/editing t
 
 #### Run the emulator with the correct library path and options
 
-Make sure to 
+Make sure to
 
 * Set the library path to the directory containing the Open GL library for the emulator (LD_LIBRARY_PATH=...)
 * Run the x86 version of the emulator (run `<android-sdk>/tools/emulator-x86`)

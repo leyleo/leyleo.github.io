@@ -15,9 +15,9 @@ title : 草丁
 tagline: nothing to say
 author :
   name : 草丁
-  email : liulei224@163.com
-  github : leyleo
-  weibo: "@草丁"
+  email : "liulei224@163.com"
+  github : "http://github.com/leyleo"
+  weibo: "http://weibo.com/liuley"
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt

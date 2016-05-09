@@ -592,8 +592,8 @@ void doUnbindService() {
 以下是`Messenger`的使用方法摘要：
 
 * 服务实现一个`Handler`，由其接收来自客户端的每个调用的回调
-*`Handler`用于创建`Messenger`对象（对`Handler`的引用）
-*`Messenger`创建一个`IBinder`，服务通过`onBind()`使其返回客户端
+* `Handler`用于创建`Messenger`对象（对`Handler`的引用）
+* `Messenger`创建一个`IBinder`，服务通过`onBind()`使其返回客户端
 * 客户端使用`IBinder`将`Messenger`（引用服务的`Handler`）实例化，然后使用后者将`Message`对象发送给服务
 * 服务在其`Handler`中（具体地讲，是在`handleMessage()`方法中）接收每个`Message`
 

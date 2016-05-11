@@ -150,6 +150,48 @@ blockquote p {
   border: 1px solid #4c964d;
   color: #FFF; }
 
+/* link_box */
+.link_box {
+  list-style: none;
+  margin: 10px;
+  overflow: hidden; }
+
+.link_box li {
+  line-height: 28px; }
+
+.link_box li i {
+  opacity: 0.9; }
+
+.link_box.inline li {
+  float: left;
+  padding: 0;
+}
+
+.link_box a {
+  padding: 0px 10px;
+  color: #555;
+  text-decoration: none;
+  border-right: 1px solid goldenrod;
+}
+
+.link_box li:last-child a {
+  border: none;
+}
+
+.link_box a span {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.link_box a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.link_box a.active {
+  background: #57A957;
+  border: 1px solid #4c964d;
+  color: #FFF; }
+
 /*分页*/
 .pagination {
   font-size: 15px;

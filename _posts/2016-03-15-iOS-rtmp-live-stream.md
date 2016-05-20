@@ -49,6 +49,13 @@ excerpt: "最近收集了一些关于视频直播的资料，目前主流的技�
 * [VideoCore 项目](https://github.com/leyleo/VideoCore)
 * [LiveVideoCoreSDK](https://github.com/runner365/LiveVideoCoreSDK) 基于上面VideoCore，使用`librtmp`库进行推流。
 
+> UCloud官博的视频直播技术文章：
+
+* [关于直播，所有的技术细节都在这里了（一）](http://blog.ucloud.cn/?p=694)
+* [关于直播，所有的技术细节都在这里了（二）](http://blog.ucloud.cn/?p=699)
+* [关于直播，所有的技术细节都在这里了（三）](http://blog.ucloud.cn/?p=760)
+* [关于直播，所有的技术细节都在这里了（四）](http://blog.ucloud.cn/?p=796)
+
 ### VideoCore
 
 VideoCore是一个开源的iOS平台音视频RTMP推流项目。支持实时滤镜效果和水印功能。在视频编码方面，iOS8以下使用AVAssetWriter进行编码：先把数据写入本地临时文件appendPixelBuffer，再读取文件数据fread. iOS8及以上采用了VideoToolBox的硬编码：VTCompressionSessionCreate创建session，当pushBuffer数据来时，调用VTCompressionSessionEncodeFrame压缩数据。

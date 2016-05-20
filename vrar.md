@@ -40,6 +40,7 @@ header : AR/VR 网址大全
   <li><a href="https://www.oculus.com" target="_blank">Oculus</a></li>
   <li><a href="https://www.google.com/get/cardboard/" target="_blank">Google Cardboard</a></li>
   <li><a href="https://www.vuforia.com" target="_blank">Vuforia</a></li>
+  <li><a href="http://www.getfove.com" target="_blank">Fove: Eye Tracking头显</a></li>
   <!-- <li><a href="" target="_blank"></a></li> -->
 </ul>
 <!-- 国内 -->
@@ -48,6 +49,7 @@ header : AR/VR 网址大全
   <li><a href="http://www.mojing.cn" target="_blank">暴风魔镜</a></li>
   <li><a href="http://www.antvr.com" target="_blank">蚁视</a></li>
   <li><a href="http://www.deepoon.com" target="_blank">大朋VR</a></li>
+  <li><a href="https://www.htcvive.com" target="_blank">HTC Vive</a></li>
   <!-- <li><a href="" target="_blank"></a></li> -->
 </ul>
 
@@ -64,6 +66,7 @@ header : AR/VR 网址大全
   <li><a href="http://www.hiar.com.cn" target="_blank">HiAR增强现实开发平台</a></li>
   <li><a href="http://www.sightp.com" target="_blank">视+</a></li>
   <li><a href="http://voidar.ionhammer.cn" target="_blank">太虚VR</a></li>
+  <li><a href="http://www.htcvive.com/cn/develop_portal/" target="_blank">HTC Vive 开发者</a></li>
   <!-- <li><a href="" target="_blank"></a></li> -->
 </ul>
 

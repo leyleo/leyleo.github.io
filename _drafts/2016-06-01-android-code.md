@@ -1,9 +1,9 @@
 ---
 layout: post
-title: ""
+title: "android模拟器及调试相关"
 description: ""
 category: 技术
-tags: [Android]
+tags: [Android, adb, hosts]
 excerpt: ""
 
 ---

@@ -4,7 +4,7 @@ title: "Android模拟器及调试相关"
 description: "Android模拟器及调试相关"
 category: 技术
 tags: [Android, adb, hosts]
-excerpt: ""
+excerpt: "1. 将文件拖拽到模拟器后，不重启模拟器的刷新方法; 2. 修改设备hosts."
 
 ---
 {% include JB/setup %}

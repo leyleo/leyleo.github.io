@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "swift的Error Handle"
-description: "swift的Error Handle"
+title: "Swift的Error Handle"
+description: "Swift的Error Handle"
 category: 技术
 tags: [swift, throws, try]
 excerpt: "之前我们在OC里，经常会遇到带有NSError指针类型参数的API，当有错误发生时，就会有错误信息被保存在这个NSError类型的对象里。"
@@ -149,8 +149,9 @@ do {
     print("other error: \(error)")
 }
 ```
+-----
 
-> 参考：
+> 参考文章：
 
 [错误和异常处理](http://swifter.tips/error-handle/)
 

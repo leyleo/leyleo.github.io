@@ -93,9 +93,10 @@ extension Vector3D {
     }
 
     static postfix func -- (vector: inout Vector3D) -> Vector3D {
-        let old = vector
-        vector -= Vector3D(x: 1.0, y: 1.0, z: 1.0)
-        return old
+        defer {
+          vector -= Vector3D(x: 1.0, y: 1.0, z: 1.0)
+        }
+        return vector
     }
 
     static func == (left: Vector3D, right: Vector3D) -> Bool {

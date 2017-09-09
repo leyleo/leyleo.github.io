@@ -218,7 +218,8 @@ blockquote p {
 }*/
 
 code {
-  color: #039BE5;
+  color: #6e6e6e;
+  font-size:80%;
   margin: 0 2px;
   border: none;
 }

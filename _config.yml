@@ -5,7 +5,7 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: rouge
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate: 8
 paginate_path : "page:num"
 # Themes are encouraged to use these universal variables
@@ -15,7 +15,7 @@ title : 草丁
 tagline: nothing to say
 author :
   name : 草丁
-  email : "liulei224@163.com"
+  email : "liuley@163.com"
   github : "http://github.com/leyleo"
   weibo: "http://weibo.com/liuley"
 

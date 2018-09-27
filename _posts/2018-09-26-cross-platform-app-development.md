@@ -3,7 +3,7 @@ layout: post
 title: "浅聊别人家的跨端方案"
 description: "简单介绍了APP上的跨端方案演化历程"
 category: 技术
-tags: [Cordova, Cocos2d, React Native, RN, Flutter]
+tags: [Web, Cordova, Cocos2d, react-native, Flutter]
 excerpt: "引言：这篇PPT介绍了现在市面上主流的跨端方案，目的是帮助自身理解跨端方案演进及实践方式，思路大体是..."
 
 ---
